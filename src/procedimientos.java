@@ -142,5 +142,33 @@ public class procedimientos {
         return numero_octal.toString();
 
     }
+
+    public void limpiar_hexadecimal () {
+
+        hexadecimal.clear();
+
+    }
+
+    public void limpiar_octadecimal () {
+
+        octadecimal.clear();
+        
+    }
+
+    public StringBuilder getNumero_octal() {
+        return numero_octal;
+    }
+
+    public void setNumero_octal(StringBuilder numero_octal) {
+        this.numero_octal = numero_octal;
+    }
+
+    public StringBuilder getNumero_hexa() {
+        return numero_hexa;
+    }
+
+    public void setNumero_hexa(StringBuilder numero_hexa) {
+        this.numero_hexa = numero_hexa;
+    }
     
 }

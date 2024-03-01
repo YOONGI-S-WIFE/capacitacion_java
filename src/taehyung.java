@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class taehyung {
@@ -14,26 +15,31 @@ public class taehyung {
 
         while (seguir == 1) {
 
-            while (seguir == 1) {
+            int continuar = 1;
 
-                System.out.println("por favor digita un numero DECIMAL");
+            while (continuar == 1) {
 
             try {
 
+            System.out.println("por favor digita un numero DECIMAL");
             numero_recibido = leer.nextDouble();
-            seguir = 0;
+            continuar = 0;
             
-                } catch (Exception e) {
+            } catch (InputMismatchException e) {
 
                     System.out.println("digitaste un caracter invalido, intentalo otra vez");
-                    seguir = 1;
+                    leer.next();
 
                 }
-                
+
             }
         
         System.out.println("el numero que digitaste en el sistema hexadecimal es: " + resultado.hexadecimal(numero_recibido));
+        resultado.limpiar_hexadecimal();
+        resultado.setNumero_hexa(new StringBuilder(""));
         System.out.println("el numero que digitaste en el sistema octadecimal es: " + resultado.octadecimal(numero_recibido));
+        resultado.limpiar_octadecimal();
+        resultado.setNumero_octal(new StringBuilder(""));
 
         System.out.println("desea proporcionar otro numero?");
         System.out.println("si ese es el caso dijite 1 para seguir y 0 para terminar el programa");
